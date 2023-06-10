@@ -1,0 +1,24 @@
+<resources>
+
+<!--    Main Menu -->
+
+    <string name="home">Home</string>
+    <string name="courses">Courses</string>
+    <string name="chat">Chat</string>
+    <string name="account">Account</string>
+    <string name="more">More</string>
+
+    <string name="app_name">MyProjectStudy</string>
+    <string name="login_to_your_account">Login to Your Account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="new_user_register_now">New user? Register Now</string>
+    <string name="login">LOGIN</string>
+    <string name="or_login_with">or login with</string>
+    <string name="todo">TODO</string>
+    <string name="google">GOOGLE</string>
+    <string name="twitter">TODO</string>
+    <string name="hello_brakthin">Hello, Brakthin!</string>
+    <string name="aa">TODO</string>
+    <string name="search">Search ...</string>
+</resources>
