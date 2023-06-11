@@ -2,6 +2,7 @@ package com.example.myprojectstudy.ui.activity;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -19,31 +20,39 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        // Show HomeFragment
         showFragment(new HomeFragment());
 
         // Setup Listeners
-        binding.bottomNavigationView.setOnItemReselectedListener(item -> {
-            if (item.getItemId() == R.id.itm_home){
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.itm_home) {
                 showFragment(new HomeFragment());
-            } else if (item.getItemId() == R.id.itm_couses){
+            } else if (item.getItemId() == R.id.itm_couses) {
                 showFragment(new ProvincesFragment());
             } else if (item.getItemId() == R.id.itm_chat){
-            showFragment(new ChatFragment());
-            } else if (item.getItemId() == R.id.itm_account){
+                showFragment(new ChatFragment());
+            } else if (item.getItemId() == R.id.itm_account) {
                 showFragment(new ProfileFragment());
             } else {
                 showFragment(new MoreFragment());
             }
+            return true;
         });
-    }
 
+
+
+    }
 
     // Class Fragment
     private void showFragment(Fragment fragment){
@@ -59,4 +68,5 @@ public class MainActivity extends AppCompatActivity {
         // Commit transaction
         fragmentTransaction.commit();
     }
+
 }
